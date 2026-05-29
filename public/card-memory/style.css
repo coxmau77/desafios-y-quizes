@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Tu color principal */
+    --main-clr: oklch(55.472% 0.17867 255.986);
+
+    /* Mezclamos con blanco para aclararlo */
+    --light-clr: color-mix(in oklch, var(--main-clr), white 75%);
+    /* Mezclamos con negro para oscurecerlo */
+    --dark-clr: color-mix(in oklch, var(--main-clr), black 87%);
+
+
+    color-scheme: light dark;
+    accent-color: var(--main-clr);
+    text-wrap: balance;
+
+    background-color: light-dark(var(--light-clr), var(--dark-clr));
+    color: light-dark(var(--dark-clr), var(--light-clr));
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.1rem;
+}
